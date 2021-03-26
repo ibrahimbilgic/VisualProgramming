@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class OBEB {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("Lütfen bir sayi girin: ");
         int num1 = scan.nextInt();
+        System.out.println("Lütfen bir sayi girin: ");
         int num2 = scan.nextInt();
        
         int gcd = 1; // greatest common divisor

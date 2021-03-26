@@ -1,3 +1,4 @@
+package HaftaUc;
 import java.util.Scanner;
 
 public class Ispalindrome {

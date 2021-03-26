@@ -1,3 +1,4 @@
+package HaftaUc;
 public class regex {
     public static void main(String[] args) {
         String s = "in 1991 Oak released\tin 1996 it is renamed as java, Java JDK 1.0 released in 1996";
