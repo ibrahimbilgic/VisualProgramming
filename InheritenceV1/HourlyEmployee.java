@@ -22,7 +22,10 @@ public class HourlyEmployee extends Employee {
     public double getMonthlyHours() {
         return monthlyHours;
     }
-   
+    @Override
+   public String toString(){
+       return super.toString() + " "+monthlyHours+ " " + hourlyWage;
+   }
     public double getHourlyWage() {
         return hourlyWage;
     }
@@ -33,5 +36,9 @@ public class HourlyEmployee extends Employee {
                 throw new IllegalArgumentException("Zero or Negative argument");
             }
         }
+    }
+    @Override
+    double monthlyPay() {
+        return 200000;
     }
 }

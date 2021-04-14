@@ -6,7 +6,29 @@ import javax.naming.ldap.LdapContext;
 
 
 public class Company {
+    Employee[] employees = new Employee[3];
+    public Company(){
+        employees[0] = new HourlyEmployee("ibrahim", LocalDate.of(2021, 04, 05));
+        employees[1] = new HourlyEmployee("ozkan", LocalDate.of(2021, 04, 05));
+        employees[2] = new SalariedEmployee("zehra", LocalDate.of(2021, 04, 05),200000);
+
+
+        
+    }
+    public void printEmployee(){
+        for(Employee employee:employees){
+            System.out.println(employee.toString());
+        }
+    }
+    public double monthlyPayroll(){
+        double payroll = 0.0;
+        for(Employee employee:employees){
+            payroll += employee.monthlyPay();
+        }
+        return payroll;
+    }
     public static void main(String[] args) {
+        /*
         //Employee can = new Employee("Can",LocalDate.of(2021, 6, 4));
         HourlyEmployee ozkan = new HourlyEmployee("Can",LocalDate.of(2021, 6, 4),220.0,25.0);
         Employee ibo = new Employee("ibrahim", LocalDate.of(2020, 3, 5));
@@ -27,7 +49,12 @@ public class Company {
         System.out.println(zehra.getName());
         System.out.println(zehra.getHireDate());
         System.out.println(zehra.getMonthlyHours());
-        System.out.println(zehra.getHourlyWage());
+        System.out.println(zehra.getHourlyWage());*/
+
+        Company sirket = new Company();
+        sirket.printEmployee();
+        System.out.println(sirket.monthlyPayroll());
+        
 
     }
 }

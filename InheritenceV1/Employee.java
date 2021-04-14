@@ -2,7 +2,7 @@ package InheritenceV1;
 
 import java.time.LocalDate;
 
-public class Employee {
+abstract class Employee {
     private String name;
     private LocalDate hireDate;
 
@@ -25,5 +25,11 @@ public class Employee {
             }
         }
     }
-  
+    abstract double monthlyPay();
+    @Override
+    public String toString() {
+        return name + " "+ hireDate;
+    }
 }
+  
+
