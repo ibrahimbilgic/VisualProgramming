@@ -1,18 +1,19 @@
 package InheritenceV1;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.naming.ldap.LdapContext;
 
 
 public class Company {
-    Employee[] employees = new Employee[3];
+    ArrayList<Employee> employees = new ArrayList<>();
+
     public Company(){
-        employees[0] = new HourlyEmployee("ibrahim", LocalDate.of(2021, 04, 05));
-        employees[1] = new HourlyEmployee("ozkan", LocalDate.of(2021, 04, 05));
-        employees[2] = new SalariedEmployee("zehra", LocalDate.of(2021, 04, 05),200000);
-
-
+        employees.add(new HourlyEmployee("ibrahim", LocalDate.of(2021, 04, 05)));
+        employees.add(1,new SalariedEmployee("zehra", LocalDate.of(2021, 04, 05),200000));
+        employees.add(new HourlyEmployee("ozkan", LocalDate.of(2021, 04, 05)));
         
     }
     public void printEmployee(){
@@ -26,6 +27,12 @@ public class Company {
             payroll += employee.monthlyPay();
         }
         return payroll;
+    }
+    public String toString(){
+        return employees.toString();
+    }
+    public void sort(){
+        Collections.sort(employees);
     }
     public static void main(String[] args) {
         /*
@@ -52,9 +59,13 @@ public class Company {
         System.out.println(zehra.getHourlyWage());*/
 
         Company sirket = new Company();
-        sirket.printEmployee();
-        System.out.println(sirket.monthlyPayroll());
+
+        //sirket.printEmployee();
+        //System.out.println(sirket.monthlyPayroll());
         
+        System.out.println(sirket.toString());
+        sirket.sort();
+        System.out.println(sirket.toString());
 
     }
 }

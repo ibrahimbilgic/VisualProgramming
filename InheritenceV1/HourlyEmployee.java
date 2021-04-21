@@ -15,7 +15,7 @@ public class HourlyEmployee extends Employee {
     }
     public HourlyEmployee(String name,LocalDate hireDate,double monthlyHours,double hourlyWage){
         super(name,hireDate);
-        disallowZerosAndNegatives(monthlyHours,hourlyWage);
+        Utils.disallowZerosAndNegatives(monthlyHours,hourlyWage);
         this.hourlyWage = hourlyWage;
         this.monthlyHours = monthlyHours;
     }
@@ -28,14 +28,6 @@ public class HourlyEmployee extends Employee {
    }
     public double getHourlyWage() {
         return hourlyWage;
-    }
-
-    public void disallowZerosAndNegatives(double... args){
-        for (double d : args) {
-            if(d<=0){
-                throw new IllegalArgumentException("Zero or Negative argument");
-            }
-        }
     }
     @Override
     double monthlyPay() {

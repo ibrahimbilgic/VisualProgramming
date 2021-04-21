@@ -2,12 +2,12 @@ package InheritenceV1;
 
 import java.time.LocalDate;
 
-abstract class Employee {
+public abstract class Employee extends Object implements Comparable<Employee>{
     private String name;
     private LocalDate hireDate;
 
     public Employee(String name,LocalDate hireDate){
-        disallowNullArgs(name,hireDate);
+        Utils.disallowNullArgs(name,hireDate);
         this.name = name;
         this.hireDate = hireDate;
     }
@@ -18,17 +18,15 @@ abstract class Employee {
     public LocalDate getHireDate() {
         return hireDate;
     }
-    public void disallowNullArgs(Object... args){
-        for (Object object : args) {
-            if(args == null){
-                throw new IllegalArgumentException("Null Arguments");
-            }
-        }
-    }
+    
     abstract double monthlyPay();
     @Override
     public String toString() {
         return name + " "+ hireDate;
+    }
+    @Override
+    public int compareTo(Employee other){
+        return this.hireDate.compareTo(other.hireDate);
     }
 }
   
