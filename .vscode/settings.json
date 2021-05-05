@@ -1,5 +1,2 @@
-{
-    "java.project.sourcePaths": [
-        "InheritenceV1"
-    ]
-}
+{ "java.project.sourcePaths": [ "HaftaAltı","HaftaBes","HaftaBir",
+    "HaftaDort","HaftaIki","haftaSekiz","HaftaUc","InheritenceV1" ] } //sourcepaths ekle..
