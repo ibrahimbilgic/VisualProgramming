@@ -1,17 +1,12 @@
-package InheritenceV1;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import javax.naming.ldap.LdapContext;
-
 
 public class Company {
     ArrayList<Employee> employees = new ArrayList<>();
 
     public Company(){
-        employees.add(new HourlyEmployee("ibrahim", LocalDate.of(2021, 04, 05)));
+        employees.add(new HourlyEmployee("ibrahim", LocalDate.of(2021,01,02)));
         employees.add(1,new SalariedEmployee("zehra", LocalDate.of(2021, 04, 05),200000));
         employees.add(new HourlyEmployee("ozkan", LocalDate.of(2021, 04, 05)));
         
@@ -33,6 +28,7 @@ public class Company {
     }
     public void sort(){
         Collections.sort(employees);
+        //System.out.println("Çalıştım");
     }
     public static void main(String[] args) {
         /*

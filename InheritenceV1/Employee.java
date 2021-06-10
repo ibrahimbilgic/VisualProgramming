@@ -1,5 +1,3 @@
-package InheritenceV1;
-
 import java.time.LocalDate;
 
 public abstract class Employee extends Object implements Comparable<Employee>{

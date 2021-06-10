@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.Scanner;
